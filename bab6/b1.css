@@ -1,0 +1,51 @@
+/* === SELEKTOR KOMBINASI === */
+
+/* Descendant: semua <a> di dalam nav */
+nav a { color: white; text-decoration: none; }
+
+/* Child: hanya <li> langsung dari .menu */
+.menu > li { display: inline-block; }
+
+/* :nth-child: baris genap ganjil warna berbeda (zebra striping) */
+tr:nth-child(even) { background-color: #f2f2f2; }
+tr:nth-child(odd) { background-color: white; }
+
+/* Setiap 3 elemen, mulai dari elemen ke-1 (1, 4, 7, 10...) */
+li:nth-child(3n+1) { font-weight: bold; }
+
+
+/* === PSEUDO-CLASS === */
+.tombol:hover { background: #2980b9; transform: translateY(-2px); }
+.tombol:active { transform: translateY(0); }
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+
+/* === PSEUDO-ELEMENT === */
+/* Menambahkan ikon sebelum judul section */
+h2::before {
+    content: '📌';
+    color: #e74c3c;
+}
+
+/* Garis dekoratif setelah judul */
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #2ecc71;
+    margin-top: 5px;
+}
+
+/* Huruf pertama diperbesar (drop cap) */
+p.artikel::first-letter {
+    font-size: 3em;
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+}
